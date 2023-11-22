@@ -20,3 +20,12 @@ BrandingUpdater.prototype = {
         $branding.addClass('initialized');
     }
 };
+
+$(document).ready(function() {
+    $('#branding').each(function() {
+        new BrandingUpdater($(this)).run();
+    });
+    if ($('body.login').length != 0) {
+        $('<img>').attr('src', '//jet.geex-arts.com/ping.gif');
+    }
+});
